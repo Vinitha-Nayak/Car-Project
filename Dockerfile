@@ -1,5 +1,5 @@
 #pull the httpd base image
-FROM https:latest
+FROM httpd:latest
 
 #person who is maintaining
 MAINTAINER "nayakvinitha413@gmail.com"
