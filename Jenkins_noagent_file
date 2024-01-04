@@ -1,17 +1,11 @@
 pipeline {
   agent none
-  stages {
-    stage('checkout ') {
-      steps {
-        echo 'cloning git repository'
-      }
-    }
     stage('Install httpd') {
       agent {
         docker { image 'httpd:latest' }
       }
       steps {
-        sh 'systemctl status httpd'
+        echo 'succe'
       }
     }
     stage('copy from src to des ') {
