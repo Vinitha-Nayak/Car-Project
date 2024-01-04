@@ -1,15 +1,10 @@
 pipeline {
   agent none
   stages {
-    stage('Install httpd') {
+    stage('copy from src to des ') {
       agent {
         docker { image 'httpd:latest' }
       }
-      steps {
-        echo 'succe'
-      }
-    }
-    stage('copy from src to des ') {
       steps {
         sh 'cp -r /var/lib/jenkins/workspace/Sample-pipeline-project/*  /var/www/html/'
         sh 'cd /var/www/html/'
