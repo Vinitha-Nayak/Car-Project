@@ -11,7 +11,7 @@ pipeline {
     }
     stage('copy from src to des ') {
       steps {
-        sh 'cp -r /var/jenkins/workspace/httpd-pipline/*  /var/www/html/'
+        sh 'cp -r /var/lib/jenkins/workspace/Sample-pipeline-project/*  /var/www/html/'
         sh 'cd /var/www/html/'
         sh 'ls'
       }
