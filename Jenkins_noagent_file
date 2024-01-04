@@ -11,8 +11,7 @@ pipeline {
         docker { image 'httpd:latest' }
       }
       steps {
-        sh 'systemctl start httpd'
-        sh 'systemctl enable httpd'
+        sh 'systemctl status httpd'
       }
     }
     stage('copy from src to des ') {
