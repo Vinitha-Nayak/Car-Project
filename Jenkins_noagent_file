@@ -1,0 +1,26 @@
+pipeline {
+  agent none
+  stages {
+    stage('checkout ') {
+      steps {
+        echo 'cloning git repository'
+      }
+    }
+    stage('Install httpd') {
+      agent {
+        docker { image 'httpd:latest' }
+      }
+      steps {
+        sh 'systemctl start httpd'
+        sh 'systemctl enable httpd'
+      }
+    }
+    stage('copy from src to des ') {
+      steps {
+        sh 'cp -r /var/jenkins/workspace/httpd-pipline/*  /var/www/html/'
+        sh 'cd /var/www/html/'
+        sh 'ls'
+      }
+    }
+  }
+}
